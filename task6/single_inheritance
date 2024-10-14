@@ -1,0 +1,23 @@
+
+class vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def vehicle_info(self):
+        print(f'Make: {self.make}, Model: {self.model}')
+
+
+class car(vehicle):
+    def __init__(self, make, model, fuel_type):
+        super().__init__(make, model)
+        self.fuel_type = fuel_type
+
+    def car_info(self):
+        self.vehicle_info()
+        print(f'Fuel Type: {self.fuel_type}')
+
+
+car = car('Mercedes-Benz', 'GLA', 'Diesel')
+
+car.car_info()

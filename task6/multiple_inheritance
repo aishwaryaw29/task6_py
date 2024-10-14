@@ -1,0 +1,32 @@
+
+class student:
+    def __init__(self, student_id, branch):
+        self.student_id = student_id
+        self.branch = branch
+
+    def student_info(self):
+        print(f'Student ID: {self.student_id}, Branch: {self.branch}')
+
+
+class athlete:
+    def __init__(self, sport):
+        self.sport = sport
+
+    def athlete_info(self):
+        print(f'Sport: {self.sport}')
+
+
+class StudentAthlete(student, athlete):
+    def __init__(self, student_id, branch, sport, team):
+        student.__init__(self, student_id, branch)
+        athlete.__init__(self, sport)
+        self.team = team
+
+    def student_athlete_info(self):
+        self.student_info()
+        self.athlete_info()
+        print(f'Team: {self.team}')
+
+
+student_athlete = StudentAthlete('111', 'Commerce', 'Football', 'Chiefs')
+student_athlete.student_athlete_info()

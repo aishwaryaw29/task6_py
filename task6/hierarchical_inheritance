@@ -1,0 +1,40 @@
+
+class animal:
+    def __init__(self, type):
+        self.type = type
+
+    def animal_info(self):
+        print(f'Animal Type: {self.type}')
+
+
+class dog(animal):
+    def __init__(self, name, type, breed):
+        super().__init__(type)
+        self.name = name
+        self.breed = breed
+
+    def dog_info(self):
+        self.animal_info()   
+        print(f'Name: {self.name}')
+        print(f'Breed: {self.breed}')
+
+
+class cat(animal):
+    def __init__(self, name, type, color):
+        super().__init__(type)
+        self.name = name
+        self.color = color
+
+    def cat_info(self):
+        self.animal_info()   
+        print(f'Name: {self.name}')
+        print(f'Color: {self.color}')
+
+
+animal1 = dog( 'Bruno','dog','Golden Retriever')
+animal1.dog_info()
+
+print()
+
+animal2 = cat('Lily','cat','Black')
+animal2.cat_info()

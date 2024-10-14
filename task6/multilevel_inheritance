@@ -1,0 +1,31 @@
+
+class person:
+    def __init__(self, name):
+        self.name = name
+
+    def person_info(self):
+        print(f'Name: {self.name}')
+
+
+class employee(person):
+    def __init__(self, name, emp_id):
+        super().__init__(name)
+        self.emp_id = emp_id
+
+    def employee_info(self):
+        self.person_info()
+        print(f'Employee ID: {self.emp_id}')
+
+
+class manager(employee):
+    def __init__(self, name, emp_id, department):
+        super().__init__(name, emp_id)
+        self.department = department
+
+    def manager_info(self):
+        self.employee_info()
+        print(f'Department: {self.department}')
+
+
+manager = manager('Rahul', 'E001', 'Accounts')
+manager.manager_info()

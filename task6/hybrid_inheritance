@@ -1,0 +1,35 @@
+# Single and Multiple Inheritance
+
+class electronic:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def electronic_info(self):
+        print(f'Electronic Brand: {self.brand}')
+
+
+class computer(electronic):
+    def __init__(self, brand, processor):
+        super().__init__(brand)
+        self.processor = processor
+
+    def computer_info(self):
+        print(f'Processor: {self.processor}')
+
+
+class tablet(computer):
+    def __init__(self, brand, processor, screen_size):
+        super().__init__(brand, processor)
+        self.screen_size = screen_size
+
+    def tablet_info(self):
+        self.electronic_info()
+        self.computer_info()
+        print(f'Screen Size: {self.screen_size} inches')
+
+
+tablet = tablet('Apple', 'M1', 11)
+tablet.tablet_info()
+
+
+
